@@ -21,3 +21,38 @@ function Submit(){
          document.getElementById("number1").value = "";
          document.getElementById("number2").value = "";
 }
+questionturn="player1";
+answerturn="player2";
+function check(){
+    answer1=document.getElementById("input_check_box").value;
+    Answer=answer1.toLowerCase();
+    if(actual_answer==Answer){
+        if(answerturn=="player1"){
+            Player1_score=Player1_score+1;
+            document.getElementById("player1_score").innerHTML=Player1_score; 
+        }
+        else{Player2_score=Player2_score+1;
+            document.getElementById("player2_score").innerHTML=Player2_score;
+
+        }
+    }
+    if (answerturn=="player1"){
+        answerturn="player2";
+        document.getElementById("player_answer").innerHTML="Answer turn- "+player2;
+ 
+    }else{
+        answerturn="player1";
+        document.getElementById("player_answer").innerHTML="Answer turn- "+player1;
+
+    }
+    if (questionturn=="player1"){
+        questionturn="player2";
+        document.getElementById("player_question").innerHTML="Question turn- "+player2;
+ 
+    }else{
+        questionturn="player1";
+        document.getElementById("player_question").innerHTML="Question turn- "+player1;
+
+    }
+    document.getElementById("output").innerHTML="";
+}
